@@ -2,6 +2,7 @@ import { MessageBody, SubscribeMessage, WebSocketGateway, WebSocketServer } from
 import { Server, Socket } from 'socket.io';
 
 import { DrawingsService } from './drawings.service';
+import { IDrawing } from './drawings.interface';
 
 @WebSocketGateway({ cors: { origin: '*' } })
 export class DrawingsGateway {
@@ -16,7 +17,7 @@ export class DrawingsGateway {
   }
 
   @SubscribeMessage('draw')
-  handleDraw(@MessageBody() data: any) {
+  handleDraw(@MessageBody() data: IDrawing) {
     this.server.emit('draw', data);
     this.drawingsService.saveDrawing(data);
   }

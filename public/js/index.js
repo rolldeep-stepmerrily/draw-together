@@ -1,4 +1,4 @@
-const socket = io('http://ip:port'); // 서버 ip에 맞게 변경해야함! README 참고
+const socket = io('http://localhost:3069'); // 서버 ip에 맞게 변경해야함! README 참고
 const canvas = document.querySelector('#drawingCanvas');
 const ctx = canvas.getContext('2d');
 const colorPicker = document.querySelector('#colorPicker');
