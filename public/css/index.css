@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  text-align: center;
+}
+
+canvas {
+  border: 1px solid #000;
+  background-color: white;
+}
+
+.controls {
+  margin-top: 10px;
+}
+
+button {
+  margin-left: 10px;
+}

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>draw-together</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>draw-together</h1>
+      <canvas id="drawingCanvas" width="800" height="600"></canvas>
+      <div class="controls">
+        <input type="color" id="colorPicker" value="#000000" />
+        <button id="clearButton">Cler!!</button>
+      </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>

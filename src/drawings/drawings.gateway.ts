@@ -1,5 +1,5 @@
 import { MessageBody, SubscribeMessage, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
-import { Server } from 'socket.io';
+import { Server, Socket } from 'socket.io';
 
 import { DrawingsService } from './drawings.service';
 
@@ -9,6 +9,11 @@ export class DrawingsGateway {
   server: Server;
 
   constructor(private readonly drawingsService: DrawingsService) {}
+
+  handleConnection(client: Socket) {
+    const currentDrawings = this.drawingsService.findCurrentDrawings();
+    client.emit('init', currentDrawings);
+  }
 
   @SubscribeMessage('draw')
   handleDraw(@MessageBody() data: any) {
